@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Proxima Nova', 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+/* ... (rest of your CSS code) ... */
+
+html{
+    scroll-behavior: smooth;
+}
+body {
+background: #102031;
+background-image: image();
+  }
+
+#header{
+width: 100%;
+height: 150vh;
+background-size: cover;
+background-position: center;
+}
+.container{
+    padding: 10px 10%;  
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo{
+    width: 140px;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: #f9f4f4;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #220663;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+.container p{
+    color: #f3eded;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+.container p span{
+    color: #909090;
+}
+.header_Text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.header_Text h1{
+    
+   
+    top: 20px;
+    padding-bottom: 300px;
+    margin-left: 0px;
+    font-size: 80px;
+    color: #faf6f6;
+}
+.header_Text h1 span{
+    color: #909090;
+    font-size: 120px;
+    position: absolute;
+    top:470px;
+    left: 130px;
+    z-index: 2;
+    
+    
+}
+.header_Text  p{
+    color:#f3f1f1;
+    position: absolute;
+    bottom: -150px;
+    right:   20px;
+    font-size: 25px;
+    font-weight: 500;
+    
+}
+#topRightImage {
+    position: absolute;
+    top: 50px; /* Adjust the top distance as needed */
+    right: 0px; /* Adjust the right distance as needed */
+    width: 700px; /* Adjust the width as needed */
+    height: 700px; /* Maintain aspect ratio */
+    margin-bottom: 0px;
+    z-index: -1;
+    background-color: #102031;
+}
+hr{
+    font-weight: bold;
+    width: auto;
+}
