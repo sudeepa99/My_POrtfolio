@@ -162,5 +162,83 @@
 		<a href="#" class="btn">See more</a>
 	</div>
 </div>
+<!---------------------------Contact-->
+<div id="contact">
+	<div class="container">
+		<div class="row">
+			<div class="contact-left">
+				<h1 class="SubTitle">Contact Me</h1>
+				<p><!-------email icon--><i class="fa-solid fa-envelope"></i>sudeepa1234nisal@gmail.com</p>
+				<p><!--phone icon---------><i class="fa-solid fa-phone"></i>0771576866</p>
+				<div class="socilMedia">
+					<a href="#"><i class="fa-brands fa-facebook"></i></a><!---------------Methn link eka add krnn social media & icon tikai-->
+					<a href="https://www.linkedin.com/in/sudeepa-nisal-993b87218/"><i class="fa-brands fa-linkedin"></i></a><!---------------Methn link eka add krnn social media & icon tikai-->
+					<a href="https://github.com/sudeepa99"><i class="fa-brands fa-github"></i></a><!---------------Methn link eka add krnn social media & icon tikai-->
+					<a href="#"><i class="fa-brands fa-whatsapp"></i></a><!---------------Methn link eka add krnn social media & icon tikai-->
+				</div>
+				<a href="images/my cv.pdf" download="images/my cv.pdf" class="btn btn2">Download CV</a>
+			</div>
+			<div class="contact-right">
+				<form name="submit-to-google-sheet">
+					<input type="text" name="Name" placeholder="Your Name" required>
+					<input type="email" name="Email" placeholder="Your Email" required>
+					<textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+					<button type="submit" class="btn btn2">Submit</button>
+				</form>
+				<span id="msg"></span>
+			</div>
+		</div>
+	</div>
+	<div class="copyright">
+		<p>Copyright © Sudeepa. Made with by Sudeepa Nisal <i>Heart icon</i></p>
+	</div>
+</div>
+<script>
+var tablinks=document.getElementsByClassName("tab_links");
+var tabcontents=document.getElementsByClassName("tab-contents");
+function opentab(tabname) {
+	for (tablink of tablinks) {
+		tablink.classList.remove("active-link");
+		
+	}
+	for (tabcontent of tabcontents ) {
+		tabcontent.classList.remove("active-tab");
+	}
+	event.currentTarget.classList.add("active-link");
+	document.getElementById(tabname).classList.add("active-tab")
+}
+</script>
+
+<script>
+	var sidemenu= document.getElementById("sidemenu");
+
+	function openmenu() {
+		sidemenu.style.right = "0";
+
+	}
+	function closemenu() {
+		sidemenu.style.right = "-200px";
+		
+	}
+</script>
+
+<script>
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbx4mNPFJcfE1y3r1trrXnK4tOG1kcLxuREa9KXf1dUiw1rgvZXEZA3eUIdvahNhRqqK/exec'
+	const form = document.forms['submit-to-google-sheet']
+	const msg=document.getElementById("msg")
+  
+	form.addEventListener('submit', e => {
+	  e.preventDefault()
+	  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+		.then(response => {
+			msg.innerHTML="Message sent successfully"
+			setTimeout(function () {
+				msg.innerHTML=""
+			},5000)
+			form.reset()
+		})
+		.catch(error => console.error('Error!', error.message))
+	})
+  </script>
 </body>
 </html>
