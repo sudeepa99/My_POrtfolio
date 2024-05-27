@@ -258,3 +258,240 @@ background: #220663;
 transform: translateY(-10px);
 }
 
+/*-----------Portpolio---------------*/
+#portfolio{
+    padding: 50px 0;
+}
+
+.workList{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer{
+    width: 100%;
+  /***  height: 100%;***/
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),#4719b1);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #220663;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius:50%;
+    text-align: center;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #220663;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.5s ;
+}
+.btn:hover{
+    background: #220663;
+}
+
+
+#header {
+    padding-bottom: 1px; /* Adjust this value to reduce the gap */
+}
+
+#about {
+    padding-top:1px; /* Adjust this value to reduce the gap */
+}
+
+/*------------Contact-------------------*/
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+
+.contact-left p i{
+    color: #220663;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.socilMedia{
+    margin-top: 30px;
+}
+
+.socilMedia a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.socilMedia a:hover{
+    color: #220663;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: #220663;
+}
+
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;;
+    
+}
+.copyright i{
+    color: #220663;
+}
+
+nav .fa-solid{
+    display: none;
+}
+
+/*---------css for small screen--------*/
+@media only screen and (max-width: 600px){
+    #header{
+        background-image: url(images/phone-background.png);
+    }
+    .header_Text{
+        margin-top: 100%;
+        font-size: 16px;
+
+    }
+    .header_Text h1{
+        font-size: 30px;
+    }
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul {
+        background: #220663;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5px;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .SubTitle{
+        font-size: 40px;
+    }
+    .about-r-1, .about-r-2{
+        flex-basis: 100%;
+    }
+    .about-r-1{
+        margin-bottom: 30px;
+    }
+    .about-r-2{
+        font-size: 14px;
+    }
+    .tab_links{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .contact-left,.contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
+    }
+
+}
+
+#msg{
+    color: #4c12d2;
+    margin-top: -40px;
+    display: block;
+}
