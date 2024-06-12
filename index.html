@@ -6,6 +6,8 @@
     <script src="https://kit.fontawesome.com/e9fbf603fd.js" crossorigin="anonymous"></script>
 	<title>My portfolio</title>
     <link rel="stylesheet" href="styles.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 <body>
     <div id="header">
@@ -28,10 +30,12 @@
 			<hr>
 			
 			<div class="header_Text">
-				<h1>Hey there <br>  I AM <br><span> Sudeepa Nisal.</span></h1>
-				<img id="topRightImage" src="images/IMG_20181108_095103-removebg.png" alt="Top Right Image">				
 				
-				<p>Specialized in Frontend Development,<br> Mobile App Development and <br>  UI/UX designing.</p>
+				<h1>Hey there <br>  I AM <br><span> Sudeepa Nisal.</span></h1>
+				<img id="topRightImage" src="images/IMG_20181108_095103-removebg.png" alt="Top Right Image">
+				<div class="word"></div>				
+				
+				<!-- <p>Specialized in Frontend Development,<br> Mobile App Development and <br>  UI/UX designing.</p> -->
 			</div>
 		</div>
 	</div>
@@ -240,5 +244,52 @@ function opentab(tabname) {
 		.catch(error => console.error('Error!', error.message))
 	})
   </script>
+    <script>
+		var words = ['Software Engineer Enthusiast |', 'Frontend Developer |', 'Mobile App Developer', 'UI/UX Designer'],
+			part,
+			i = 0,
+			offset = 0,
+			len = words.length,
+			forwards = true,
+			skip_count = 0,
+			skip_delay = 15,
+			speed = 70;
+	
+		var wordflick = function() {
+			setInterval(function() {
+				if (forwards) {
+					if (offset >= words[i].length) {
+						++skip_count;
+						if (skip_count == skip_delay) {
+							forwards = false;
+							skip_count = 0;
+						}
+					}
+				} else {
+					if (offset == 0) {
+						forwards = true;
+						i++;
+						offset = 0;
+						if (i >= len) {
+							i = 0;
+						}
+					}
+				}
+				part = words[i].substr(0, offset);
+				if (skip_count == 0) {
+					if (forwards) {
+						offset++;
+					} else {
+						offset--;
+					}
+				}
+				$('.word').text(part);
+			}, speed);
+		};
+	
+		$(document).ready(function() {
+			wordflick();
+		});
+	</script>
 </body>
 </html>

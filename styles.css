@@ -97,7 +97,10 @@ nav ul li a:hover::after{
     
     
 }
-.header_Text  p{
+.word{
+    color: #f5f1f1;
+}
+/* .header_Text  p{
     color:#f3f1f1;
     position: absolute;
     bottom: -150px;
@@ -105,13 +108,13 @@ nav ul li a:hover::after{
     font-size: 25px;
     font-weight: 500;
     
-}
+} */
 #topRightImage {
     position: absolute;
     top: 50px; /* Adjust the top distance as needed */
     right: 0px; /* Adjust the right distance as needed */
-    width: 700px; /* Adjust the width as needed */
-    height: 700px; /* Maintain aspect ratio */
+    width: 600px; /* Adjust the width as needed */
+    height: 600px; /* Maintain aspect ratio */
     margin-bottom: 0px;
     z-index: -1;
     background-color: #102031;
